@@ -207,7 +207,7 @@ a{color:inherit;text-decoration:none}
   </svg>
 
   <div class="hero__inner reveal">
-    <span class="hero__tag">Save the date</span>
+    <span class="hero__tag">Save the memories</span>
     <h1 class="hero__names">Роман<span class="hero__amp">&amp;</span>Анастасия</h1>
     <div class="hero__date">29 августа 2026</div>
     <div class="hero__place">База отдыха «Волжино», г. Энгельс</div>
@@ -233,13 +233,13 @@ a{color:inherit;text-decoration:none}
 <!-- ===================== ТАЙМЕР ===================== -->
 <section class="section section--bg" id="timer">
   <div class="reveal">
-    <div class="sec-eyebrow">До торжества осталось</div>
-    <h2 class="sec-title">Обратный <em>отсчёт</em></h2>
+    <h2 class="sec-title">До торжества <em>осталось</em></h2>
   </div>
   <div class="countdown reveal" id="countdown">
     <div class="cd"><span class="cd__num" id="cd-days">0</span><span class="cd__label">Дней</span></div>
     <div class="cd"><span class="cd__num" id="cd-hours">0</span><span class="cd__label">Часов</span></div>
     <div class="cd"><span class="cd__num" id="cd-mins">0</span><span class="cd__label">Минут</span></div>
+    <div class="cd"><span class="cd__num" id="cd-secs">0</span><span class="cd__label">Секунд</span></div>
   </div>
 </section>
 <!-- ===================== РАСПИСАНИЕ ===================== -->
@@ -317,6 +317,7 @@ a{color:inherit;text-decoration:none}
     <h2 class="sec-title">Вы с <em>нами?</em></h2>
     <div class="divider"></div>
     <p class="lead">Пожалуйста, заполните короткую анкету до 3 августа 2026 — это поможет нам всё подготовить.</p>
+    <p class="lead" style="margin-top:.5rem;font-size:1rem;color:var(--mocha)">Анкета заполняется отдельно по каждому гостю — спасибо за понимание!</p>
   </div>
   <script src="https://forms.yandex.ru/_static/embed.js"></script>
   <iframe class="rsvp-frame" src="https://forms.yandex.ru/u/6a58b3aaeb61460b7268bff9?iframe=1" frameborder="0" name="ya-form-6a58b3aaeb61460b7268bff9" width="650" title="Анкета гостя"></iframe>
@@ -371,6 +372,7 @@ function updateCountdown(){
   document.getElementById("cd-days").textContent = Math.floor(diff/86400000);
   document.getElementById("cd-hours").textContent = pad(Math.floor(diff%86400000/3600000));
   document.getElementById("cd-mins").textContent = pad(Math.floor(diff%3600000/60000));
+  document.getElementById("cd-secs").textContent = pad(Math.floor(diff%60000/1000));
 }
 updateCountdown(); setInterval(updateCountdown,1000);
 
